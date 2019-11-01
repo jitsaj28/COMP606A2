@@ -83,7 +83,71 @@ public static function find($mysqli, $email,$password){
 
 //                                               <<<< Setter Function >>>>
 
+public function setUid($uid){
+  $this->$uid = $uid;
+}
 
+public function setName($name){
+  $result = true;
+  if (is_string($name)){
+    $this->name = $name;
+  } else $result = false;
+  return $result;
+}
+
+public function setAddress($address)
+
+  $result = true;
+
+  if (is_string($address)){
+    $this->address = $address;
+  } else $result = false;
+  return $result;
+}
+
+   public function setPhone($phone){
+  $result = true;
+  //Checking.. Only numbers taken
+  if (preg_match('/^[0-9]{10}+$/', $phone))
+  {
+    $this->phone = $phone;
+    $result = true;
+  } 
+  else {
+    $result=false;
+  }
+  return $result;
+}
+
+
+public function setEmail($email){
+  // string, email format
+  $result = true;
+  if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email)){
+    $result = false;
+  } else {
+    $this->email = $email;
+  }
+  return $result;
+}  
+
+
+
+public function setPassword($password){
+  // string, email format
+  $result = true;
+  $ucase = preg_match('@[A-Z]@', $password);
+  $lcase = preg_match('@[a-z]@', $password);
+  $numb    = preg_match('@[0-9]@', $password);
+  $spclChars = preg_match('@[^\w]@', $password);
+  // Checking as a combination of all the characters
+  if(!$ucase || !$lcase || !$numb || !$spclChars || strlen($password) < 8) {
+    $result = false;
+  } else {
+    $this->password = $password;
+  }
+  return $result;
+} 
 
 
 
