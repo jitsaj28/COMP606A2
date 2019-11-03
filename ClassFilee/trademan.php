@@ -53,7 +53,7 @@ function GetAppliedJob()
 	
 		$con= parent::db_con(); 	
 		$tid = $_SESSION['Trademan_ID'];
-        $this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID ,a.tradeid from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where b.tid='".$tid."'   ";
+        $this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID ,a.tradeid,b.sdate from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where b.tid='".$tid."'   ";
         $this->_result = mysqli_query($con,$this->_sql);
         $array = array(); 
         while($row = mysqli_fetch_assoc( $this->_result ))  
@@ -71,7 +71,7 @@ function GetAppliedJob()
 	
 		$con= parent::db_con(); 
 		$tid =   $_SESSION['Trademan_ID'];
-		$this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID ,a.tradeid from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where b.tid='".$tid."' and a.tradeid != '0'  group by a.tradeid";
+		$this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID ,a.tradeid ,b.sdate from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where b.tid='".$tid."' and a.tradeid != '0'  group by a.tradeid";
         $this->_result = mysqli_query($con,$this->_sql);
         $array = array(); 
         while($row = mysqli_fetch_assoc( $this->_result ))  
