@@ -84,8 +84,8 @@ $_sql = "select * from tbl_customerdetails where uname='".$uname."'  and upass='
 	
 		
 		$con= parent::db_con(); 
-		$cid =  $_title;
-		$this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where a.cid='".$cid."' and a.tradeid ='0'";
+		$cid = $_SESSION['Customer_ID'];
+		$this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID,b.sdate from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where a.cid='".$cid."' and a.tradeid ='0'";
         $this->_result = mysqli_query($con,$this->_sql);
         $array = array(); 
         while($row = mysqli_fetch_assoc( $this->_result ))  
@@ -100,7 +100,7 @@ $_sql = "select * from tbl_customerdetails where uname='".$uname."'  and upass='
 	
 		$con= parent::db_con(); 
 		$cid =   $_SESSION['Customer_ID'];
-		$this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID ,a.tradeid from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where a.cid='".$cid."'   group by a.tradeid";
+		$this->_sql = "SELECT a.jtitle,a.jdesc, a.jcost, a.jadate, a.jddate,b.lcost,b.mcost,b.tid,b.edate,c.name,b.id as TradeID,a.id as JobID ,a.tradeid,b.sdate from tbl_jobdesc a inner join tbl_trade b on a.id = b.jid  INNER join tbl_tradesmandetails c on b.tid = c.id where a.cid='".$cid."'   group by a.tradeid";
         $this->_result = mysqli_query($con,$this->_sql);
         $array = array(); 
         while($row = mysqli_fetch_assoc( $this->_result ))  
