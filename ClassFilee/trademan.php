@@ -38,11 +38,11 @@ function AddTrademan($txtName,$txtAddress,$txtemail,$txtmobileno,$txtuname,$txtu
 
 }
 
-function InsertaApplyQ($mcost,$lcost,$ddate,$id)
+function InsertaApplyQ($mcost,$lcost,$sdate,$ddate,$id)
 {
 		$tid = $_SESSION['Trademan_ID'];
          $con= parent::db_con(); 
-        $this->_sql = "INSERT INTO tbl_trade (tid, jid, lcost, mcost, edate) VALUES ('".$tid."','".$id."','".$lcost."','".$mcost."','".$ddate."')";
+        $this->_sql = "INSERT INTO tbl_trade (tid, jid, lcost, mcost, edate,sdate) VALUES ('".$tid."','".$id."','".$lcost."','".$mcost."','".$ddate."','".$sdate."')";
         $this->_result = mysqli_query( $con,$this->_sql);
 		  
         mysqli_close($con);
