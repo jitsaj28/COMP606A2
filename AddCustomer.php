@@ -1,7 +1,7 @@
 <?php
 
 require_once 'header.php';
-?><div class="row container-fluid" style="background-image:url('Images/12.jpg'); height:100vh;">
+?>
 
       
 
@@ -63,7 +63,9 @@ require_once 'header.php';
         <?php
         
         ?>
-        <div class="container-fluid">
+        <div class="row container-fluid" style="background-image:url('Images/13.png'); height:100%;">
+            <div class = "col-md-4" style="margin-left:35%;margin-top:10%;">
+                <div class="container-fluid" style="border:1px solid white;padding:5%;border-radius:5%;">
         
 		<h3>Add Customer</h3>
 		
