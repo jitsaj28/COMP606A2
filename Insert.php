@@ -3,7 +3,7 @@
  include 'NavBarCustomer.php';
  ?>
 
-<div class="row "style="background-image:url('Images/1.jpg');height:100vh;width:99.7vw;">
+<div class="row "style="background-image:url('Images/15.png');height:100vh;width:99.7vw;">
   <div class="col-md-6" style="margin-left:25%;margin-top:30px;">
   <h2>Upload Job </h2>
   <form action="insert_prc.php" > 
