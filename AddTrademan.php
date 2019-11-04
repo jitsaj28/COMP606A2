@@ -2,6 +2,7 @@
 
 require_once 'header.php';
 ?>
+
         <script>
             var getQueryString = function (field, url) {
                 var href = url ? url : window.location.href;
@@ -29,7 +30,9 @@ require_once 'header.php';
         <?php
         
         ?>
-        <div class="container-fluid">
+        <div class="row container-fluid" style="background-image:url('Images/13.png'); height:100vh;">
+        <div class = "col-md-4" style="margin-left:35%;margin-top:10%;">
+        <div class="container-fluid" style="border:1px solid white;padding:5%;border-radius:5%;">
 		<h3>Add Trademan</h3>
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3">
@@ -77,5 +80,5 @@ require_once 'header.php';
                 <a href="#" style="margin-left:10px"> 
                     <button type="button" class="btn btn-sm btn-secondary ">Cancel</button></a>
             </div>
-
+            <a href="TradeManLogin.php" >Go to Login Page</a>
         </div>
