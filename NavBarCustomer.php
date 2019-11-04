@@ -10,10 +10,13 @@
         <a class="nav-link" href="insert.php">Add Job</a>
       </li>
 	   <li class="nav-item">
+      <li class="nav-item">
+        <a class="nav-link" href="myjob.php">My jobs</a>
+      </li>
         <a class="nav-link" href="CustomerViewTrade.php">View Quotes</a>
       </li>
 	   <li class="nav-item">
-        <a class="nav-link" href="ConfiredJob.php">Confired</a>
+        <a class="nav-link" href="ConfiredJob.php">Confirmed</a>
       </li>
 	   <li class="nav-item" style="float:left;">
         <a class="nav-link" href="Logout.php">Logout</a>

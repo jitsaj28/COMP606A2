@@ -78,6 +78,21 @@ $_sql = "select * from tbl_customerdetails where uname='".$uname."'  and upass='
         mysqli_close($con);  
         return $array;  
 	}
+	function get_myjobdetails($id)
+	{
+
+		  $con= parent::db_con(); 
+		
+        $this->_sql = "select * from tbl_jobdesc  where   cid ='$id'";
+        $this->_result = mysqli_query($con,$this->_sql);
+        $array = array(); 
+        while($row = mysqli_fetch_assoc( $this->_result ))  
+           {  
+                $array[] = $row;  
+           } 
+        mysqli_close($con);  
+        return $array;  
+	}
 	
 	function gettrademandetails()
 	{
