@@ -37,7 +37,7 @@ require_once 'header.php';
         ?>
 		
 				
-<div class="row container-fluid" style="background-image:url('Images/1.jpg'); height:100vh;">
+<div class="row container-fluid" style="background-image:url('Images/14.png'); height:100vh;">
 <div class = "col-md-4" style="margin-left:35%;margin-top:10%;">
       <div class="container-fluid" style="border:1px solid #fff0ff;padding:5%;border-radius:5%;">
 	  
