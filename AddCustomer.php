@@ -1,7 +1,10 @@
 <?php
 
 require_once 'header.php';
-?>
+?><div class="row container-fluid" style="background-image:url('Images/12.jpg'); height:100vh;">
+
+      
+
         <script>
             var getQueryString = function (field, url) {
                 var href = url ? url : window.location.href;
@@ -61,6 +64,7 @@ require_once 'header.php';
         
         ?>
         <div class="container-fluid">
+        
 		<h3>Add Customer</h3>
 		
             <div class="row">
@@ -115,5 +119,5 @@ require_once 'header.php';
                 <a href="#" style="margin-left:10px"> 
                     <button type="button" class="btn btn-sm btn-secondary" onclick="removedata();">Cancel</button></a>
             </div>
-
+<a href="index.php" >Go to Login Page</a>
         </div>
