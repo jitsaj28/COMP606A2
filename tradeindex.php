@@ -49,4 +49,3 @@ $(document).ready(function()
 ?>  
 
 </div>
-<?php include 'footer.php'; ?>
